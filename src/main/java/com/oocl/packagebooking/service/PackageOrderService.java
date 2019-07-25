@@ -22,8 +22,8 @@ public class PackageOrderService {
         packageOrderList.add(packageOrder);
         return packageOrderRepository.findAll();
     }
-//    public List<PackageOrder> findByStatus(String packageStatus){
-//        return packageOrderRepository.findByPackageStatus();
-//    }
+    public List<PackageOrder> findByStatus(int packageStatus){
+        return packageOrderRepository.findByPackageStatus(packageStatus);
+    }
 
 }

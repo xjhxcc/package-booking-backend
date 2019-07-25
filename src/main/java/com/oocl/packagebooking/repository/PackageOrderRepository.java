@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PackageOrderRepository extends JpaRepository<PackageOrder,Integer> {
-//    List<PackageOrder> findByPackageStatus();
+    List<PackageOrder> findByPackageStatus(int packageStatus);
 }

@@ -20,8 +20,8 @@ public class PackageOrderController {
     public List<PackageOrder> findAllPackageOrder(){
         return packageOrderService.findAllPackageOrder();
     }
-//    @GetMapping
-//    public List<PackageOrder> findByStatus(@RequestParam String packageStatus){
-//        return packageOrderService.findByStatus(packageStatus);
-//    }
+    @GetMapping(path="/{packageStatus}")
+    public List<PackageOrder> findByStatus(@PathVariable int packageStatus){
+        return packageOrderService.findByStatus(packageStatus);
+    }
 }
