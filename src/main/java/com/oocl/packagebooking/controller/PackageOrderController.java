@@ -21,7 +21,16 @@ public class PackageOrderController {
         return packageOrderService.findAllPackageOrder();
     }
     @GetMapping(path="/{packageStatus}")
-    public List<PackageOrder> findByStatus(@PathVariable int packageStatus){
-        return packageOrderService.findByStatus(packageStatus);
+    public List<PackageOrder> findByPackageStatus(@PathVariable int packageStatus){
+        return packageOrderService.findByPackageStatus(packageStatus);
     }
+    @PatchMapping(path="packageStatus/{packageStatus}/{packageId}")
+    public int updatePackageStatus(@PathVariable("packageStatus") int packageStatus,@PathVariable("packageId") String packageId) {
+        return packageOrderService.updateByPackageStatus(packageStatus,packageId);
+    }
+    @PatchMapping(path="preTime/{preTime}/{packageId}")
+    public int updateByPreTime(@PathVariable("preTime") String preTime,@PathVariable("packageId") String packageId) {
+        return packageOrderService.updateByPreTime(preTime,packageId);
+    }
+
 }

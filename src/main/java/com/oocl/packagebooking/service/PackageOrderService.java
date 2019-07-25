@@ -22,8 +22,14 @@ public class PackageOrderService {
         packageOrderList.add(packageOrder);
         return packageOrderRepository.findAll();
     }
-    public List<PackageOrder> findByStatus(int packageStatus){
+    public List<PackageOrder> findByPackageStatus(int packageStatus) {
         return packageOrderRepository.findByPackageStatus(packageStatus);
     }
 
+    public int updateByPreTime(String preTime, String packageId) {
+        return packageOrderRepository.updateByPreTime(preTime,packageId);
+    }
+    public int updateByPackageStatus(int packageStatus,String packageId) {
+        return packageOrderRepository.updateByPackageStatus(packageStatus,packageId);
+    }
 }

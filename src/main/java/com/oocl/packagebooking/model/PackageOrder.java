@@ -13,7 +13,7 @@ public class PackageOrder {
     private String username;
     @Column(nullable = false)
     private String tel;
-    @Column(nullable = false)
+    @Column(nullable = false,columnDefinition = "integer default 1")
     private int packageStatus;
     private String preTime;
 
