@@ -24,9 +24,9 @@ public class PackageOrderController {
     public List<PackageOrder> findByPackageStatus(@PathVariable int packageStatus){
         return packageOrderService.findByPackageStatus(packageStatus);
     }
-    @PatchMapping(path="packageStatus/{packageStatus}/{packageId}")
-    public int updatePackageStatus(@PathVariable("packageStatus") int packageStatus,@PathVariable("packageId") String packageId) {
-        return packageOrderService.updateByPackageStatus(packageStatus,packageId);
+    @PatchMapping(path="packageStatus/{packageId}")
+    public int updatePackageStatus(@PathVariable("packageId") String packageId) {
+        return packageOrderService.updateByPackageStatus(packageId);
     }
     @PatchMapping(path="preTime/{preTime}/{packageId}")
     public int updateByPreTime(@PathVariable("preTime") String preTime,@PathVariable("packageId") String packageId) {

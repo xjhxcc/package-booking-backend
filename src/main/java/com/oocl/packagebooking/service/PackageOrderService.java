@@ -29,7 +29,7 @@ public class PackageOrderService {
     public int updateByPreTime(String preTime, String packageId) {
         return packageOrderRepository.updateByPreTime(preTime,packageId);
     }
-    public int updateByPackageStatus(int packageStatus,String packageId) {
-        return packageOrderRepository.updateByPackageStatus(packageStatus,packageId);
+    public int updateByPackageStatus(String packageId) {
+        return packageOrderRepository.updateByPackageStatus(packageId);
     }
 }

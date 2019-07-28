@@ -1,5 +1,7 @@
 package com.oocl.packagebooking.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,8 +15,9 @@ public class PackageOrder {
     private String username;
     @Column(nullable = false)
     private String tel;
-    @Column(nullable = false,columnDefinition = "integer default 1")
+    @Column(nullable = false,columnDefinition = "integer default 3")
     private int packageStatus;
+    @JsonFormat
     private String preTime;
 
     public int getId() {

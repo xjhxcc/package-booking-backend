@@ -15,10 +15,10 @@ public interface PackageOrderRepository extends JpaRepository<PackageOrder,Integ
     List<PackageOrder> findByPackageStatus(int packageStatus);
     @Transactional
     @Modifying
-    @Query("update PackageOrder set packageStatus=:packageStatus where packageId=:packageId")
-    int updateByPackageStatus(@Param("packageStatus") int packageStatus,@Param("packageId")String packageId);
+    @Query("update PackageOrder set packageStatus=2, preTime = null where packageId=:packageId")
+    int updateByPackageStatus(@Param("packageId")String packageId);
     @Transactional
     @Modifying
-    @Query("update PackageOrder set preTime=:preTime where packageId=:packageId")
+    @Query("update PackageOrder set preTime=:preTime, packageStatus=1 where packageId=:packageId")
     int  updateByPreTime(@Param("preTime") String preTime,@Param("packageId")String packageId);
 }
